@@ -1,0 +1,29 @@
+.container{
+    width: 350px;
+    height:300px;
+    border: 1px solid black;
+    background-color:white;
+}
+#sim{
+    color: green;
+}
+.wrapper{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+}
+#sak{
+    color:black;
+}
+#tip{
+    color: grey;
+    padding:2px;
+}
+.img{
+    width:350px;
+    height:300px;
+}
+#style{
+    font-family: sans-serif;
+    color:grey;
+}

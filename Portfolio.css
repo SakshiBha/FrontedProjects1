@@ -1,0 +1,246 @@
+ @import url(Be_Vietnam_Pro.zip); 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Be Vietnam pro",sans-serif;
+    scroll-behavior: smooth;
+}
+/* Global Variable */
+:root{
+    --bgOrange:#e84949;
+}
+#wrapper{
+    height:100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.container{
+    width: 1200px;
+    /* center mein rakhne ke liye margin 0 auto kr diya */
+    margin:0 auto;
+}
+.navbar{
+    display:flex;
+    /* at extreme position use space-between */
+    justify-content: space-between;
+    /* at vertically axis center */
+    align-items: center;
+    padding-top:1rem;
+}
+.logo{
+    width: 80px;
+}
+.logo-container{
+    /* use flex because there are two things in logo-container "P" upar h or "ortfolio" niche h undono ko single line pe lekr aana h, HORIZONTALLY single line pe chahte h flex use karna pdega use kar ke horizontal line pe aa jaega  */
+     display: flex;  
+    /* ab "P" down h aur "ortfolio" up h indono ko single line mein lane ke liye use "baseline"  */
+     justify-content: baseline; 
+     /* vertically axis ke according center mein lekr aana chahte hu */
+     align-items:center;   
+}
+.logo-text{
+    /* "ortfolio" moves in left side */
+    margin-left:-1.2rem;  
+    font-size: 28 px;
+}
+.nav-items{
+    /* home about contactme skills ye horizontal line main lana chahte h toh USE="FLEX" */
+    display:flex;
+    /* chipkane ko hatane ke liye use kiye */
+    gap:30px;
+    padding:0 4em;
+}
+.nav-items div{
+    /* size of projects skills contact me about */
+    font-size: 20px;
+    font-weight: 500;
+    /* jb bhi cursor whaa pahuche toh hand ki shape m bn jaye toh use cursor:pointer */
+    cursor: pointer;
+}
+.nav-items div a{
+    /* text */
+    color: black;
+}
+a{
+    /* wo text mein underline nahi chahiye */
+    text-decoration: none;
+}
+.nav-items div:hover{
+    /* transition duration in text */
+    transition: 0.8s;
+    font-weight: bold;
+}
+ .hero-section{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:5rem;
+    margin:4rem auto;
+    padding:0 1rem;
+    padding-bottom: 8rem;
+}
+ .faded-text{
+    position: absolute;
+    user-select: none;
+    font-size: 7em;
+    color: rgb(231,231,231);
+    bottom:-13%;
+    left:-2%;
+    font-weight: bold;
+    transition:all 3s;
+} 
+  .hero-section-left{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+     gap:2rem;   
+} 
+ .hero-section-heading{
+    font-size: 35px;
+    color:#343d68;
+    font-weight: 500;
+}
+.name{
+    color: #4e45d5;
+    font-weight: 400;
+    font-size: 4em;
+}
+ .role{
+    color:#4e45d5;
+    font-weight: 200;
+}
+ .hero-section-sub-heading{
+    font-size:45px;
+    line-height: 45px;
+}
+ .hero-section-decription{
+    margin-top:1rem;
+    width:70%;
+    font-weight: 500;
+}  
+
+.hero-section-right{
+    position:relative;
+}
+.absolute{
+    position:absolute;
+}
+.user-image{
+    /* white patti image ke upar padding hain */
+    padding:2.5rem;
+    filter: grayscale(1);
+    transition:all 1s;
+    animation:scaleImage 5s linear infinite;
+}
+.user-image img{
+    z-index:-9;
+}
+@keyframes scaleImage{
+
+    0%{
+        filter: grayscale(1);
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.1);
+        filter:grayscale(1);
+        box-shadow: 3px 3px 10px black;
+    }
+    100%{
+        transform: scale(1);
+        filter: grayscale(0);
+    }
+}
+
+.icon-dots{
+    z-index: 9;
+    bottom:-1rem;
+    right:0;
+    animation-name: dotsAnimation;
+    animation-iteration-count:infinite;
+}
+@keyframes dotsAnimation{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+    100%{
+        transform:translate(0px);
+    }
+}
+.icon-cube{
+    z-index: 9;
+    top:-0.8em;
+    right:1em;
+    animation-name:cubeRotate;
+    animation-duration:3s;
+    animation-iteration-count:infinite;
+}
+@keyframes cubeRotate{
+    0%{
+        transform:rotateY(0deg) translateY(0px) ;
+        
+        
+    }
+    50%{
+        transform:rotateY(180deg) translateY(-12px);
+    }
+    100%{
+        transform:rotate(360deg) translateY(0px);
+    }
+}
+.icon-circle{
+    z-index: 9;
+    left:0;
+    bottom: 0;
+    animation-name: shakeEffect;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
+@keyframes shakeEffect{
+    0%{
+        left: 0;
+        bottom: 0;
+        
+    }
+    50%{
+        left: 5%;
+        bottom:10%
+    }
+    100%{
+        left:0;
+        bottom: 0;
+    }
+}
+.icon-zigzag{
+    z-index: 9;
+    top:1.5rem;
+    left:-0.3em;
+    animation: zigzagAnimation 5s ease-in infinite;
+
+}
+@keyframes zigzagAnimation{
+    50%{
+        left: 5%;
+        top:2%;
+    } 
+}
+.icon-plus{
+    z-index: 9;
+    top:-0.8rem;
+    left:50%;
+    animation:shakeEffectPlus 5s ease-in infinite;
+}
+
+@keyframes shakeEffectPlus{
+    50%{
+        top:3%;
+        left:48%;
+    }
+}
